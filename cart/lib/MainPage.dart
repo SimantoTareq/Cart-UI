@@ -16,15 +16,14 @@ class _MainPageState extends State<MainPage> {
   double _subTotalPrice = 0;
   getTotalPrice() {
     double total = 0;
-    detals.forEach((_itemCount) {
-      total += _itemCount.totalPrice ?? _itemCount.price;
+    detals.forEach((order) {
+      total += order.totalPrice ?? order.price;
     });
     setState(() {
       _subTotalPrice = total;
     });
   }
 
-  int _itemCount = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
